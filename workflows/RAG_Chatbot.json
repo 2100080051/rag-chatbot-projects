@@ -1,0 +1,91 @@
+{
+  "name": "RAG Chatbot",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "rag-chatbot",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "272da021-b07a-4252-9176-8e90ea0bd3c2",
+      "name": "Webhook",
+      "webhookId": "a189da09-68d3-46c5-acb2-a933069d14d5"
+    },
+    {
+      "parameters": {
+        "command": "\"C:\\Users\\nabhi\\Downloads\\rag-chatbot-project\\.venv\\Scripts\\python.exe\" \"C:\\Users\\nabhi\\Downloads\\rag-chatbot-project\\scripts\\utils.py\"\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "d6149f64-3b6f-4449-a840-8f9135b65786",
+      "name": "Execute Command"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"answer\": {{$node[\"Execute Command\"].json[\"stdout\"]}}\n}\n",
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        380,
+        -20
+      ],
+      "id": "f252628b-2c1e-4d19-a316-de89bd1f779b",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "749f0ee9-b2e0-4fd0-971a-b188e3f27802",
+  "meta": {
+    "instanceId": "fa31c40a3ebb0d682c9bc4fa380bebf0c68658deeba8c7b013871a5c5e2c2750"
+  },
+  "id": "3MqevONAaQ1oHb2m",
+  "tags": []
+}

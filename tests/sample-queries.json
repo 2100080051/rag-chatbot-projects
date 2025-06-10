@@ -1,0 +1,19 @@
+{
+  "queries": [
+    {
+      "question": "What is Altibbe?"
+    },
+    {
+      "question": "How does Altibbe support ethical AI?"
+    },
+    {
+      "question": "Which AI models are used in Altibbe's RAG chatbot?"
+    },
+    {
+      "question": "What values does Altibbe emphasize in its mission?"
+    },
+    {
+      "question": "Can the chatbot work offline without OpenAI?"
+    }
+  ]
+}

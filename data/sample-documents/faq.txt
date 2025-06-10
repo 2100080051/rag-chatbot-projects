@@ -1,0 +1,4 @@
+Altibbe empowers ethical AI development.
+We use technologies like Retrieval-Augmented Generation and Large Language Models.
+Users can ask any health-tech-related question.
+We believe in virtues like integrity, humility, empathy, diligence, and wisdom.
